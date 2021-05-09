@@ -3,9 +3,9 @@ describe("peeps home page", function () {
 		cy.visit("/");
 	});
 	it("shows contents of side nav bar", function () {
-		cy.contain("Chitter");
-		cy.get("#sign-up-button").should("contain", "sign up");
-		cy.get("#log-in-button").should("contain", "log in");
+		cy.contains("Chitter");
+		cy.get("#sign-up-link").should("contain", "sign up");
+		cy.get("#log-in-link").should("contain", "log in");
 	});
 	it("Displays contents of first peep", function () {
 		cy.get("#peep-0-container").should("be.visible");
