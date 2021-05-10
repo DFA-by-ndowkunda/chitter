@@ -9,9 +9,11 @@ describe("peeps home page", function () {
 	});
 	it("Displays contents of first peep", function () {
 		cy.get("#peep-0-container").should("be.visible");
-		cy.get("peep-0-message").contains("Hello world!");
-		cy.get("peep-0-user").contains("ndowkunda01");
-		cy.get("peep-0-name").contains("Marie");
-		cy.get("#peep-0-time").contains("Mon May 03 2021 10:30:00");
+		cy.get("#peep-0-message").contains("Hello World!");
+		cy.get("#peep-0-userHandle").contains("ndowkunda01");
+		cy.get("#peep-0-name").contains("Marie");
+		cy.get("#peep-0-timestamp").contains(
+			"Thu Jun 10 2021 12:15:00 GMT+0100 (British Summer Time)"
+		);
 	});
 });

@@ -24,7 +24,25 @@
 					<a href="/registerations/new" id="sign-up-link">sign up</a>
 				</div>
 			</nav>
-			<main id="peeps"></main>
+			<main id="peeps">
+				
+					<% peeps.reverse().forEach((peep, index) => { %>
+						<div id="peep-<%= index %>-container">
+						<span id="peep-<%= index %>-message"><%= peep.message %></span>
+						<br />
+						<span id="peep-<%= index %>-timestamp"><%= peep.createdAt %></span>
+						<% trainees.forEach((trainee, index) => { %>
+						<br />
+						<span id="peep-<%= index %>-userHandle">
+							Posted by @<%= trainee.userHandle %>
+							<span id="peep-<%= index %>-name"
+								><%=trainee.name%></span
+							></span
+						>
+					</div>
+					<% }) %> <% }) %>
+				</div>
+			</main>
 			<footer>end of peeps</footer>
 		</section>
 	</body>
