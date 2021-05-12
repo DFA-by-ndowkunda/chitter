@@ -17,11 +17,9 @@ describe("peeps home page", function () {
 		cy.get("#peep-textbox").type("I love chitter!");
 		cy.get("#post-peep").click();
 		cy.get("#peep-1-container").should("be.visible");
-		cy.get("#user-1-message").contains("I love chitter!");
-		cy.get("#peep-1-container").contains("ndowkunda");
-		cy.get("#peep-1-container").contains("Marie");
-		cy.get("#peep-1-container").contains(
-			"Thu Jun 10 2021 12:15:00 GMT+0100 (British Summer Time)"
-		);
+		cy.contains("I love chitter!");
+		cy.contains("ndowkunda");
+		cy.contains("Marie");
+		cy.contains("Thu Jun 10 2021 12:15:00 GMT+0100 (British Summer Time)");
 	});
 });

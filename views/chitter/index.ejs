@@ -25,10 +25,11 @@
 			</form>
 		</div>
 		<div id="peeps">
-			<% peeps.reverse().forEach((peep, index) => { %>
+			<% peeps.forEach((peep, index) => { %>
 			<div id="peep-<%= index %>-container">
 				<%= peep.message %> 🕖<%= peep.createdAt %><br />
-				<%= currentUser.name %> <%= currentUser.username %> <% }) %>
+				<% users.forEach((user, index) => { %> <% if(user.id === peep.UserId){
+				%> <%= user.name %> <%= user.username %><% } %> <% }) %><% }) %>
 			</div>
 		</div>
 		<% if (currentUser) { %>
