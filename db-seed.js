@@ -1,4 +1,6 @@
 const db = require("./models");
+const bcrypt = require("bcryptjs");
+const hash = bcrypt.hashSync("password", 10);
 
 const seedUser = async () => {
 	console.log("seeding user table");
@@ -6,7 +8,7 @@ const seedUser = async () => {
 		name: "Marie",
 		username: "ndowkunda",
 		email: "marie@test.com",
-		passwordHash: "password",
+		passwordHash: hash,
 		createdAt: new Date("2021", "5", "10", "12", "15"),
 		updatedAt: new Date("2021", "5", "10", "12", "15"),
 	});
@@ -16,14 +18,13 @@ const seedPeep = async () => {
 	await db.Peep.create(
 		{
 			message: "Hello World!",
-			UserId: 1,
 			createdAt: new Date("2021", "5", "10", "12", "15"),
 			updatedAt: new Date("2021", "5", "10", "12", "15"),
 			user: {
 				name: "Marie",
 				username: "ndowkunda",
 				email: "marie@test.com",
-				passwordHash: "password",
+				passwordHash: hash,
 				createdAt: new Date("2021", "5", "10", "12", "15"),
 				updatedAt: new Date("2021", "5", "10", "12", "15"),
 			},

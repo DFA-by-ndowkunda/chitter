@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
 				validate: {
 					len: {
 						args: [6],
-						msg: "Username must have a minimum of 6 characters ",
+						msg: "Username must have a minimum of 6 characters",
 					},
 				},
 			},
@@ -36,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
 				type: DataTypes.STRING,
 				validate: {
 					isEmail: { msg: "Please enter a valid email address" },
-					notEmpty: { msg: "Please enter an email address" },
+					notEmpty: true,
 				},
 			},
 			passwordHash: {

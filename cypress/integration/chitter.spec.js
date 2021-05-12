@@ -1,16 +1,12 @@
 describe("peeps home page", function () {
 	beforeEach(function () {
 		cy.task("resetDb");
-		cy.task("seedPeepTable");
+		cy.task("seedUserTable");
 		cy.visit("/");
-	});
-	it("shows user management links", function () {
-		cy.contains("Chitter");
-		cy.get("#sign-up").should("contain", "sign up");
-		cy.get("#login").should("contain", "log in");
+		cy.get("#login").click();
 	});
 	it("signed in user can post a peep", function () {
-		cy.get("#login").click();
+			cy.task("seedPeepTable");
 		cy.get("#username-textbox").type("ndowkunda");
 		cy.get("#password-textbox").type("password");
 		cy.get("#login").click();

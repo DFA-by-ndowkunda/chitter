@@ -22,7 +22,7 @@ router.post("/", async function (req, res) {
 		})
 		.catch((errors) => {
 			res.render("registrations/new", {
-				errors: ["Sorry details not valid"],
+				errors: errors,
 			});
 		});
 });

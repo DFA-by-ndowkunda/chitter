@@ -1,6 +1,7 @@
 describe("registrations feature tests", function () {
 	beforeEach(function () {
 		cy.task("resetDb");
+		cy.task("seedUserTable");
 		cy.visit("/");
 		cy.get("#sign-up").click();
 	});
@@ -13,16 +14,16 @@ describe("registrations feature tests", function () {
 		cy.get("#sign-up").click();
 		cy.url().should("include", "/chitter");
 	});
-	//validation not working atm
-	xit("shows error when username already exists", function () {
-		cy.task("seedUserTable");
-		cy.get("#name-textbox").type("Marie");
-		cy.get("#username-textbox").type("ndowkunda03");
-		cy.get("#email-textbox").type("marie02@test.com");
-		cy.get("#password-textbox").type("password111");
+	it("shows error when username is too short", function () {
+		cy.get("#name-textbox").type("Michelle");
+		cy.get("#username-textbox").type("ndowk");
+		cy.get("#email-textbox").type("michelle@test.com");
+		cy.get("#password-textbox").type("password");
 		cy.get("#sign-up").click();
-		cy.url().should("include", "registrations/new");
-		cy.get("#errors").should("contain", "Sorry details not valid");
+		cy.get("#errors").should(
+			"contain",
+			"Username must have a minimum of 6 characters"
+		);
 	});
 	it("shows error when email invalid", function () {
 		cy.get("#name-textbox").type("Marie");
@@ -30,14 +31,14 @@ describe("registrations feature tests", function () {
 		cy.get("#email-textbox").type("m@test");
 		cy.get("#password-textbox").type("password123");
 		cy.get("#sign-up").click();
-		cy.get("#errors").should("contain", "Sorry details not valid");
+		cy.get("#errors").should("contain", "Please enter a valid email address");
 	});
 	it("shows error when user doesnt enter email", function () {
 		cy.get("#name-textbox").type("Marie");
 		cy.get("#username-textbox").type("ndowkunda02");
 		cy.get("#password-textbox").type("password1234");
 		cy.get("#sign-up").click();
-		cy.get("#errors").should("contain", "Sorry details not valid");
+		cy.get("#errors").should("contain", "Please enter a valid email address");
 	});
 	it("shows error when user doesnt enter password", function () {
 		cy.get("#name-textbox").type("Marie");

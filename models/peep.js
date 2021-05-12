@@ -15,7 +15,6 @@ module.exports = (sequelize, DataTypes) => {
 	Peep.init(
 		{
 			message: DataTypes.STRING,
-			UserId: DataTypes.INTEGER,
 		},
 		{
 			sequelize,
