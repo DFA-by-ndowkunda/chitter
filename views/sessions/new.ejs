@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link href="/css/index.css" rel="stylesheet" type="text/css" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="/styles/background.css" />
+		<link rel="stylesheet" type="text/css" href="/styles/login.css" />
+		<title>Login Page</title>
+	</head>
+	<body>
+		<h1>Login</h1>
+		<h2>🐤</h2>
+		<div id="login-form">
+			<form action="/sessions" method="POST">
+				<div class="input-fields">
+					<input
+						type="text"
+						id="username-textbox"
+						name="username"
+						placeholder="username"
+					/>
+				</div>
+				<div class="input-fields">
+					<input
+						type="password"
+						id="password-textbox"
+						name="password"
+						placeholder="Password"
+					/>
+				</div>
+				<input type="submit" id="login" name="login" value="login" />
+			</form>
+		</div>
+		<div id="error-message"><%= errors %></div>
+		<% if(errors){ %>
+		<div id="sign-up">
+			<a id="sign-up" href="/registrations/new">sign up</a>
+		</div>
+		<% }%>
+	</body>
+</html>

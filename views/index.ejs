@@ -2,48 +2,15 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" type="text/css" href="styles/background.css" />
-		<link rel="stylesheet" type="text/css" href="styles/index.css" />
-		<title>Chitter Home Page</title>
+		<link rel="stylesheet" type="text/css" href="/styles/background.css" />
+		<link rel="stylesheet" type="text/css" href="/styles/buttons.css" />
+		<title>🐤Chitter Home Page 🐤</title>
 	</head>
 	<body>
-		<header>
-			<h1>Chitter</h1>
-		</header>
-		<section id="peeps-container">
-			<header>
-				<h2>Home</h2>
-			</header>
-			<nav id="side-nav-bar">
-				<div class="links">
-					<a href="/sessions/new" id="log-in-link">log in</a>
-				</div>
-				<div class="links">
-					<a href="/registerations/new" id="sign-up-link">sign up</a>
-				</div>
-			</nav>
-			<main id="peeps">
-				
-					<% peeps.reverse().forEach((peep, index) => { %>
-						<div id="peep-<%= index %>-container">
-						<span id="peep-<%= index %>-message"><%= peep.message %></span>
-						<br />
-						<span id="peep-<%= index %>-timestamp"><%= peep.createdAt %></span>
-						<% trainees.forEach((trainee, index) => { %>
-						<br />
-						<span id="peep-<%= index %>-userHandle">
-							Posted by @<%= trainee.userHandle %>
-							<span id="peep-<%= index %>-name"
-								><%=trainee.name%></span
-							></span
-						>
-					</div>
-					<% }) %> <% }) %>
-				</div>
-			</main>
-			<footer>end of peeps</footer>
-		</section>
+		<h1>Chitter</h1>
+		<h2>🐤</h2>
+		<a id="sign-up" href="/registrations/new">sign up</a>
+		<a id="login" href="/sessions/new">log in</a>
 	</body>
 </html>

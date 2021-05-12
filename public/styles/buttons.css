@@ -1,0 +1,27 @@
+.links {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 30px;
+}
+
+#login,
+#sign-up,
+#log-out,
+#post-peep {
+	background: #f58529;
+	color: #feda77;
+	padding: 1rem;
+	border: 1px solid #8134af;
+	box-shadow: 0.3rem 0.3rem 0rem -0.1rem rgba(0, 0, 0, 0.74);
+	transition: all 200ms ease-in-out;
+}
+
+#login:hover,
+#sign-up:hover,
+#log-out:hover,
+#post-peep:hover {
+	background: #8134af;
+	color: #f58529;
+	cursor: pointer;
+}

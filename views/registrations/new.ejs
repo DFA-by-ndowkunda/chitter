@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="/styles/background.css" />
+		<link rel="stylesheet" type="text/css" href="/styles/buttons.css" />
+        	<link rel="stylesheet" type="text/css" href="/styles/login.css" />
+		<title>🐤registration</title>
+	</head>
+	<body>
+		<h1>🐤Create your first peep today!🐤</h1>
+		<div id="sign-up-form">
+			<form action="/registrations" method="POST">
+				<div class="input-fields">
+					<input
+						type="text"
+						id="name-textbox"
+						name="name"
+						placeholder="enter your name"
+					/>
+				</div>
+				<div class="input-fields">
+					<input
+						type="text"
+						id="username-textbox"
+						name="username"
+						placeholder="enter username"
+					/>
+				</div>
+				<div class="input-fields">
+					<input
+						type="email"
+						id="email-textbox"
+						name="email"
+						placeholder="example@test.com"
+					/>
+				</div>
+				<div class="input-fields">
+					<input
+						type="password"
+						id="password-textbox"
+						name="password"
+						placeholder="enter password"
+					/>
+				</div>
+				<div class="input-fields">
+					<input type="submit" id="sign-up" name="sign-up" value="sign up" />
+				</div>
+			</form>
+		</div>
+		<div id="errors">
+			<p><%= errors %></p>
+		</div>
+	</body>
+</html>

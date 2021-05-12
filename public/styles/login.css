@@ -1,0 +1,29 @@
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+	color: white;
+	font-weight: 500;
+	font-size: 18px;
+	border-radius: 5px;
+	line-height: 22px;
+	background-color: transparent;
+	border: 1px solid #cc6666;
+	transition: all 0.3s;
+	padding: 13px;
+	margin-bottom: 15px;
+	width: 100%;
+	box-sizing: border-box;
+	outline: 0;
+}
+input[type="submit"] {
+	background: #f58529;
+	color: #feda77;
+	padding: 1rem;
+	border: 1px solid #8134af;
+	box-shadow: 0.3rem 0.3rem 0rem -0.1rem rgba(0, 0, 0, 0.74);
+	transition: all 200ms ease-in-out;
+}
+a {
+	font-size: 18px;
+	color: #feda77;
+}

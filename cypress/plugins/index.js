@@ -16,7 +16,26 @@
  * @type {Cypress.PluginConfig}
  */
 // eslint-disable-next-line no-unused-vars
+const truncateTables = require("../../db-reset.js");
+const { seedPeep, seedUser } = require("../../db-seed.js");
 module.exports = (on, config) => {
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
-}
+	// `on` is used to hook into various events Cypress emits
+	// `config` is the resolved Cypress config
+	on("task", {
+		resetDb() {
+			console.log("running resetDb task");
+			truncateTables();
+			return null;
+		},
+		seedPeepTable() {
+			console.log("running seedPeepTable task");
+			seedPeep();
+			return null;
+		},
+		seedUserTable() {
+			console.log("running seedUserTable task");
+			seedUser();
+			return null;
+		},
+	});
+};

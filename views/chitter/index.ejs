@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="/styles/background.css" />
+		<link rel="stylesheet" type="text/css" href="/styles/buttons.css" />
+		<link rel="stylesheet" type="text/css" href="/styles/chitter.css" />
+		<title>Chitter peeps</title>
+	</head>
+	<body>
+		<div id="header">
+			<h1><span>🐤</span>Hi <%= currentUser.name %>!</h1>
+		</div>
+		<div id="peep-form">
+			<form action="/chitter" method="POST">
+				<input
+					type="text"
+					id="peep-textbox"
+					name="message"
+					placeholder="What's happening?"
+				/>
+				<input type="submit" id="post-peep" name="peep" value="peep" />
+			</form>
+		</div>
+		<div id="peeps">
+			<% peeps.reverse().forEach((peep, index) => { %>
+			<div id="peep-<%= index %>-container">
+				<%= peep.message %> 🕖<%= peep.createdAt %><br />
+				<%= currentUser.name %> <%= currentUser.username %> <% }) %>
+			</div>
+		</div>
+		<% if (currentUser) { %>
+		<form action="/sessions?_method=DELETE" method="POST">
+			<input id="log-out" type="submit" value="log out" />
+		</form>
+		<% } else { %>
+		<div>
+			<a id="login" href="/sessions/new">log in</a>
+			<a id="sign-up" href="/registrations/new">sign up</a>
+		</div>
+		<% } %>
+	</body>
+</html>
