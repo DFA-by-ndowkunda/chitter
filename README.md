@@ -1,67 +1,77 @@
-Chitter Challenge
-=================
+# Chitter Challenge
 
-* Feel free to use Google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or trainee, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit https://airtable.com/shrUGm2T8TYCFAmjNa your work by 9:30am Monday morning
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-Challenge:
--------
+A website where trainees can login or sign up to send messages (peeps).  Demostrating understanding of software development II objectives; how the web works and the MVC pattern.
 
-As usual please start by forking this repo.
+## Built With
 
-We are going to write a small twitter clone that will allow users to post messages to a public wall.
+* [Bootstrap](https://getbootstrap.com)
+* [Cypress](https://www.cypress.io/)
+* [ejs](https://ejs.co/#install)
+* [Express](http://expressjs.com/)
+* [Sequelize](https://sequelize.org/master/index.html)
 
-Good luck and let the chitter begin!
+<!-- GETTING STARTED -->
+## Getting Started
 
-Features:
--------
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-### Standard Acceptance Criteria
+### Prerequisites
+
+To clone and run this application, you'll need;
+
+* [Git](https://git-scm.com)
+
+* [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer.
+
+### Installation
+
+From your command line:
+
+```bash
+# Clone this repository
+git clone https://github.com/ndowkunda/chitter-challenge.git
+
+# Go into the repository
+cd chitter-challenge
+
+# Install dependencies
+npm install
+
+#create peeps-manager database
+
+## create and migrate development database
+ npx sequelize-cli db:create
+ npx sequelize-cli db:migrate
+
+# create and migrate test database
+ NODE_ENV=test npx sequelize-cli db:create
+ NODE_ENV=test npx sequelize-cli db:migrate
+
+# run your tests using your test db
+ NODE_ENV=test npx nodemon app.js
+ NODE_ENV=test npx cypress open
 ```
-As a trainee software engineer
-So that I can let people know what I am doing  
-I want to post a message (peep) to chitter
 
-As a trainee
-So that I can see what others are saying  
-I want to see all peeps in reverse chronological order
+## Problem Approach
 
-As a trainee
-So that I can better appreciate the context of a peep
-I want to see the time at which it was made
+1. Mockups for user interactions
+![user interaction mockups](public/media/chitter-user-interactions-mockups.png)
 
-As a trainee
-So that I can post messages on Chitter as me
-I want to sign up for Chitter
+2. process model for user interactions
+   <!-- ![process model]() -->
 
-As a trainee
-So that only I can post messages on Chitter as me
-I want to log in to Chitter
+3. Domain models for business logic
+![functional representation, CRC and database models](public/media/chitter-domain-models.png)
 
-As a trainee
-So that I can avoid others posting messages on Chitter as me
-I want to log out of Chitter
-```
+## Tests
 
-Additional requirements:
-------
+This project used cypress for its feature tests and jasmine for its unit tests
 
-* You don't have to be logged in to see the peeps.
-* Trainee software engineers sign up to chitter with their email, password, name and a username (e.g. ewithers@digitalfutures.com, password123, Edward Withers, dearshrewdwit).
-* The username and email are unique.
-* Peeps (posts to chitter) have the name of the trainee and their user handle.
-* Your README should indicate the technologies used, and give instructions on how to install and run the tests.
+## Usage
 
-### Extended Acceptance Criteria
+### User Interactions
 
-```
-As a trainee
-So that I can stay constantly tapped in to the shouty box of Chitter
-I want to receive an email if I am tagged in a Peep
 
-As a trainee
-In order to start a conversation as a DFA trainee Software Engineer
-I want to reply to a peep from another trainee.
-```
